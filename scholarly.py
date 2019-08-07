@@ -118,8 +118,8 @@ class Publication(object):
             if citedby and not citedby.text.isspace():
                 self.citedby = int(citedby.text)
             year = __data.find(class_='gsc_a_h')
-            if year and year.text and not year.text.isspace() and len(year.text)>0:
-                self.bib['year'] = int(year.text)
+            #if year and year.text and not year.text.isspace() and len(year.text)>0:
+            self.bib['year'] = int(year.text)
         elif self.source == 'scholar':
             databox = __data.find('div', class_='gs_ri')
             title = databox.find('h3', class_='gs_rt')
